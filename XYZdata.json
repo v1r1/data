@@ -1,0 +1,7 @@
+{
+  "siteName": "XYZ Boilerplate",
+  "description": "This is a boilerplate for an XYZ project",
+  "config": "/",
+  "files": "assets",
+  "theme": "default"
+}
