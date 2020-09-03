@@ -1,19 +1,48 @@
 // Google Spreadsheet Parser
-window.onload = $.getJSON("https://spreadsheets.google.com/feeds/list/1Nnm95MR-H1jxa4IXSaPy6CogHPDan92VvCPkVBH1HMs/od6/public/values?alt=json", function (data) {
+// window.onload = $.getJSON("https://spreadsheets.google.com/feeds/list/1Nnm95MR-H1jxa4IXSaPy6CogHPDan92VvCPkVBH1HMs/od6/public/values?alt=json", function (data) {
+//
+//   var sheetData = data.feed.entry;
+//
+//   var i;
+//   for (i = 0; i < sheetData.length; i++) {
+//
+//     var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
+//     var description = data.feed.entry[i]['gsx$_cokwr']['$t'];
+//     var site = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+//
+//     document.getElementById("projects").innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
+//
+//   }
+// })
 
-  var sheetData = data.feed.entry;
+class DataTable extends HTMLElement {
+  render() {
+    let src = this.getAttribute('src')
 
-  var i;
-  for (i = 0; i < sheetData.length; i++) {
+    fetch(src)
+      .then(response => response.json())
+      .then(data => jsonData = data)
+      .catch(console.error);
 
-    var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
-    var description = data.feed.entry[i]['gsx$_cokwr']['$t'];
-    var site = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+    var i;
+    for (i = 0; i < jsonData.length; i++) {
 
-    document.getElementById("projects").innerHTML += ('<tr>'+'<td>'+name+'</td>'+'<td>'+description+'</td>'+'<td>'+site+'</td>'+'</tr>');
+      var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
+      var description = data.feed.entry[i]['gsx$_cokwr']['$t'];
+      var site = data.feed.entry[i]['gsx$_cpzh4']['$t'];
 
+      this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
+    }
   }
-})
+  connectedCallback() {
+    if (!this.rendered) {
+      this.render();
+      this.rendered = true;
+    }
+  }
+}
+
+customElements.define("data-table", DataTable);
 
 // Sort Table
 function sortTable(n) {
