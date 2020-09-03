@@ -1,0 +1,85 @@
+@charset 'UTF-8';
+
+:root {
+
+  --y-axis-page-align: center;
+  --x-axis-page-align: center;
+
+  --primary-color: green;
+  --secondary-color: limegreen;
+  --tertiary-color: lime;
+  --background-color: transparent;
+  --background-border-color: transparent;
+  --border-bg-color: black;
+
+  --background: transparent;
+
+  --border-type: double;
+  --border-thickness: 4px;
+  --border-radius: 0px;
+  --border-color: lime;
+
+  --max-width: 1000px;
+
+  --primary-font: 'EXEPixelPerfect', monospace;
+  --secondary-font: 'pcSenior', monospace;
+  --header-font: 'orange_kid', monospace;
+  --font-size: var(--responsive-font-size);
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+@font-face {
+  font-family: 'pcSenior';
+  src:
+    local('PC Senior'),
+    url('/assets/fonts/pcsenior.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EXEPixelPerfect';
+  src:
+    local('EXEPixelPerfect'),
+    url('/assets/fonts/EXEPixelPerfect.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'kirbyss';
+  src:
+    local('kirbyss'),
+    url('/assets/fonts/kirbyss.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ROADWAY';
+  src:
+    local('ROADWAY'),
+    url('/assets/fonts/ROADWAY_.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'orange_kid';
+  src:
+    local('orange_kid'),
+    url('/assets/fonts/orange_kid.ttf') format('truetype');
+}
+
+html {
+  font-size: 150%;
+}
+body {
+  padding: 0 40px;
+}
+header {
+  flex-flow:column;
+}
+.hexOS-title {
+  font-size: 7em;
+}
+.home-search {
+  background: #333;
+  color: lime;
+  margin: 20px 0;
+  width: 100%;
+}
