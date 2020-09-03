@@ -18,19 +18,19 @@
 class DataTable extends HTMLElement {
   render() {
     let src = this.getAttribute('src')
-    var jsonData;
+    var json;
 
     fetch(src)
       .then(response => response.json())
-      .then(data => jsonData = data)
+      .then(data => this.json = data)
       .catch(console.error);
 
     var i;
-    for (i = 0; i < jsonData.feed.entry.length; i++) {
+    for (i = 0; i < json.feed.entry.length; i++) {
 
-      var name = jsonData.feed.entry[i]['gsx$_cn6ca']['$t'];
-      var description = jsonData.feed.entry[i]['gsx$_cokwr']['$t'];
-      var site = jsonData.feed.entry[i]['gsx$_cpzh4']['$t'];
+      var name = json.feed.entry[i]['gsx$_cn6ca']['$t'];
+      var description = json.feed.entry[i]['gsx$_cokwr']['$t'];
+      var site = json.feed.entry[i]['gsx$_cpzh4']['$t'];
 
       this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
     }
