@@ -26,11 +26,11 @@ class DataTable extends HTMLElement {
       .catch(console.error);
 
     var i;
-    for (i = 0; i < jsonData.length; i++) {
+    for (i = 0; i < jsonData.feed.entry.length; i++) {
 
-      var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
-      var description = data.feed.entry[i]['gsx$_cokwr']['$t'];
-      var site = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+      var name = jsonData.feed.entry[i]['gsx$_cn6ca']['$t'];
+      var description = jsonData.feed.entry[i]['gsx$_cokwr']['$t'];
+      var site = jsonData.feed.entry[i]['gsx$_cpzh4']['$t'];
 
       this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
     }
