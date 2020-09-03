@@ -65,9 +65,6 @@
     url('/assets/fonts/orange_kid.ttf') format('truetype');
 }
 
-html {
-  font-size: 150%;
-}
 body {
   padding: 0 40px;
 }
