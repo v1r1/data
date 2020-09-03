@@ -18,6 +18,7 @@
 class DataTable extends HTMLElement {
   render() {
     let src = this.getAttribute('src')
+    var jsonData;
 
     fetch(src)
       .then(response => response.json())
