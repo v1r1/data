@@ -3,5 +3,6 @@
   "description": "this is data",
   "config": "/",
   "files": "assets",
-  "theme": "default"
+  "theme": "default",
+  "layout": "0"
 }
