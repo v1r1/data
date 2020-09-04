@@ -18,30 +18,31 @@
 class DataTable extends HTMLElement {
   render() {
     let src = this.getAttribute('src')
-    var json;
+    let json;
 
     fetch(src)
       .then(response => response.json())
-      .then(data => this.json = data)
+      .then(data => json = data)
       .catch(console.error);
 
-    setTimeout(function () {
-      var i;
-      for (i = 0; i < this.json.feed.entry.length; i++) {
+    var i;
+    for (i = 0; i < json.feed.entry.length; i++) {
 
-        var name = this.json.feed.entry[i]['gsx$_cn6ca']['$t'];
-        var description = this.json.feed.entry[i]['gsx$_cokwr']['$t'];
-        var site = this.json.feed.entry[i]['gsx$_cpzh4']['$t'];
+      var name = json.feed.entry[i]['gsx$_cn6ca']['$t'];
+      var description = json.feed.entry[i]['gsx$_cokwr']['$t'];
+      var site = json.feed.entry[i]['gsx$_cpzh4']['$t'];
 
-        this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
-      }
-    }, 500);
+      this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
+    }
   }
   connectedCallback() {
     if (!this.rendered) {
       this.render();
       this.rendered = true;
     }
+  }
+  getJSON() {
+    
   }
 }
 
