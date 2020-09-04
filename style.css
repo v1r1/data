@@ -44,27 +44,6 @@
     url('/assets/fonts/EXEPixelPerfect.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'kirbyss';
-  src:
-    local('kirbyss'),
-    url('/assets/fonts/kirbyss.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'ROADWAY';
-  src:
-    local('ROADWAY'),
-    url('/assets/fonts/ROADWAY_.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'orange_kid';
-  src:
-    local('orange_kid'),
-    url('/assets/fonts/orange_kid.ttf') format('truetype');
-}
-
 body {
   padding: 0 40px;
 }
