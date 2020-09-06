@@ -25,6 +25,8 @@ class DataTable extends HTMLElement {
       .then(data => json = data)
       .catch(console.error);
 
+    console.log(json)
+
     var i;
     for (i = 0; i < json.feed.entry.length; i++) {
 
@@ -42,7 +44,7 @@ class DataTable extends HTMLElement {
     }
   }
   getJSON() {
-    
+
   }
 }
 
