@@ -17,8 +17,9 @@
 
 class DataTable extends HTMLElement {
   render() {
-    let src = this.getAttribute('src')
+    let src = this.getAttribute('src');
     let json;
+    this.tbody = $q('tbody');
 
     fetch(src)
       .then(response => response.json())
@@ -34,7 +35,7 @@ class DataTable extends HTMLElement {
       var description = json.feed.entry[i]['gsx$_cokwr']['$t'];
       var site = json.feed.entry[i]['gsx$_cpzh4']['$t'];
 
-      this.innerHTML += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
+      this.tbody += (`<tr><td>${name}</td><td>${description}</td><td>${site}</td></tr>`);
     }
   }
   connectedCallback() {
