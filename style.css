@@ -2,7 +2,7 @@
 
 :root {
 
-  --y-axis-page-align: center;
+  --y-axis-page-align: flex-start;
   --x-axis-page-align: center;
 
   --primary-color: green;
